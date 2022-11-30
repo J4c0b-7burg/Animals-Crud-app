@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <main>
+      <div>
+        <form action="/animals/<%= animal._id %>?_method=PUT" method="post">
+          <fieldset>
+            <legend>Edit a <%= animal.name %></legend>
+            <label>
+              NAME:<input
+                type="text"
+                name="name"
+                value="<%= animal.name %>"
+                placeholder="enter animal name"
+              />
+            </label>
+            <label>
+              COLOR:<input
+                type="text"
+                name="color"
+                value="<%= animal.color %>"
+                placeholder="enter animal name"
+              />
+            </label>
+            <label>
+              IS CUTE:<input type="checkbox" name="isCute" <%=
+              animal.isCute ? "checked" : "" %> />
+            </label>
+          </fieldset>
+          <input type="submit" value="Update <%= animal.name %>" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
